@@ -1,0 +1,63 @@
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\Cliente.exe.config
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\Cliente.exe
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\Cliente.pdb
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Buffers.dll
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Memory.dll
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Text.Json.dll
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Buffers.xml
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Memory.xml
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.csproj.AssemblyReference.cache
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.csproj.SuggestedBindingRedirects.cache
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.Cliente.resources
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.Properties.Resources.resources
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.csproj.GenerateResource.cache
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.csproj.CoreCompileInputs.cache
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.csproj.CopyComplete
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.exe
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.pdb
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\ProtocolSI.dll
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\Cliente.exe.config
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\Cliente.exe
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\Cliente.pdb
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\ProtocolSI.dll
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Buffers.dll
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Memory.dll
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Numerics.Vectors.dll
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Text.Json.dll
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Text.Encodings.Web.dll
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Buffers.xml
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Memory.xml
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Numerics.Vectors.xml
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.csproj.AssemblyReference.cache
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.csproj.SuggestedBindingRedirects.cache
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.Cliente.resources
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.Properties.Resources.resources
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.csproj.GenerateResource.cache
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.csproj.CoreCompileInputs.cache
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.csproj.CopyComplete
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.exe
+L:\Rodrigo\1-Escola\Universidade\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.pdb
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\Google.Protobuf.dll
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\MySql.Data.dll
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\ZstdNet.dll
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\Google.Protobuf.pdb
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\Google.Protobuf.xml
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\MySql.Data.xml
+C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.Registo.resources
