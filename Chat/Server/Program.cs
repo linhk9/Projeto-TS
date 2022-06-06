@@ -66,6 +66,7 @@ namespace Server
 
             while (protocolSI.GetCmdType() != ProtocolSICmdType.EOT)
             {
+                int bytesRead = networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
                 byte[] ack;
 
                 switch (protocolSI.GetCmdType())
@@ -91,7 +92,7 @@ namespace Server
 
     class Logs
     {
-        public static void Escrever(string msg = "") // clear the log if message is not supplied or is empty
+        public static void Escrever(string msg = "") 
         {
             Console.WriteLine(string.Format("[ {0} ] {1}{2}", DateTime.Now.ToString("HH:mm"), msg, Environment.NewLine));
         }

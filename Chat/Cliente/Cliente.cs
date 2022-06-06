@@ -6,12 +6,12 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Database;
 using System.Data;
+using System.Threading;
 
 namespace Cliente
 {
     public partial class Cliente : Form
     {
-        private bool exit = false;
         private bool connected = false;
         private bool UserAuthed = false;
 
@@ -26,22 +26,19 @@ namespace Cliente
             protocolSI = new ProtocolSI();
         }
 
-        private void Log(string msg = "") // clear the log if message is not supplied or is empty
+        private void Log(string msg = "")
         {
-            if (!exit)
+            logTextBox.Invoke((MethodInvoker)delegate
             {
-                logTextBox.Invoke((MethodInvoker)delegate
+                if (msg.Length > 0)
                 {
-                    if (msg.Length > 0)
-                    {
-                        logTextBox.AppendText(string.Format("[ {0} ] {1}{2}", DateTime.Now.ToString("HH:mm"), msg, Environment.NewLine));
-                    }
-                    else
-                    {
-                        logTextBox.Clear();
-                    }
-                });
-            }
+                    logTextBox.AppendText(string.Format("[ {0} ] {1}{2}", DateTime.Now.ToString("HH:mm"), msg, Environment.NewLine));
+                }
+                else
+                {
+                    logTextBox.Clear();
+                }
+            });
         }
 
         private string ErrorMsg(string msg)
@@ -63,41 +60,30 @@ namespace Cliente
                 if (connected)
                 {
                     CloseClient();
-                } else if (client == null || !client.Connected) {
-                    string address = addrTextBox.Text.Trim();
-                    bool error = false;
-
-                    if (address.Length < 1)
+                } 
+                else if (client == null || !client.Connected) 
+                {
+                    try
                     {
-                        error = true;
-                        Log(ErrorMsg("Endereço necessário"));
-                    }
-                    else
-                    {
-                        try
-                        {
-                            IPAddress ip = Dns.GetHostEntry(address).AddressList[0];
-                        }
-                        catch
-                        {
-                            error = true;
-                            Log(ErrorMsg("Endereço inválido"));
-                        }
-                    }
-
-                    if (!error)
-                    {
+                        IPAddress ip = Dns.GetHostEntry("127.0.0.1").AddressList[0];
                         IPEndPoint endPoint = new IPEndPoint(IPAddress.Loopback, PORT);
+
                         client = new TcpClient();
                         client.Connect(endPoint);
+
                         networkStream = client.GetStream();
-                        protocolSI = new ProtocolSI();
+
+                        Thread thread = new Thread(GetMessage);
+                        thread.Start();
+
                         Connected(true);
                     }
+                    catch
+                    {
+                        Log(ErrorMsg("Erro ao connectar ao servidor!"));
+                    }
                 }
-            }
-            
-            
+            }            
         }
 
         private void SendTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -106,51 +92,65 @@ namespace Cliente
             {
                 e.Handled = true;
                 e.SuppressKeyPress = true;
+
                 if (sendTextBox.Text.Length > 0)
                 {
                     string msg = sendTextBox.Text;
                     sendTextBox.Clear();
                     Log(string.Format("{0} (Eu): {1}", usernameTextBox.Text, msg));
+
                     if (connected)
                     {
                         byte[] packet = protocolSI.Make(ProtocolSICmdType.DATA, msg);
                         networkStream.Write(packet, 0, packet.Length);
-
-                        // existe algum problema neste loop que faz crashar o cliente ou então é problema do servidor
-                        while (protocolSI.GetCmdType() != ProtocolSICmdType.ACK)
-                        {
-                            networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
-                        }
                     }
                 }
             }
         }
 
+        private void GetMessage()
+        {
+            while(true)
+            {
+                if(connected)
+                {
+                    try
+                    {
+                        networkStream = client.GetStream();
+                        networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
+                        string mensagem = protocolSI.GetStringFromData();
+                        Log(string.Format("Outro User: {0}", mensagem));
+                    }
+                    catch
+                    {
+                        Log(ErrorMsg("Erro ao receber mensagem!"));
+                    }
+                }
+                
+            }
+            
+        }
+
         private void Connected(bool status)
         {
-            if (!exit)
+            connectButton.Invoke((MethodInvoker)delegate
             {
-                connectButton.Invoke((MethodInvoker)delegate
+                connected = status;
+                if (status)
                 {
-                    connected = status;
-                    if (status)
-                    {
-                        addrTextBox.Enabled = false;
-                        usernameTextBox.Enabled = false;
-                        passwordTextBox.Enabled = false;
-                        connectButton.Text = "Disconectar";
-                        Log(SystemMsg("Estás agora conectado"));
-                    }
-                    else
-                    {
-                        addrTextBox.Enabled = true;
-                        usernameTextBox.Enabled = true;
-                        passwordTextBox.Enabled = true;
-                        connectButton.Text = "Conectar";
-                        Log(SystemMsg("Estás agora disconectado"));
-                    }
-                });
-            }
+                    usernameTextBox.Enabled = false;
+                    passwordTextBox.Enabled = false;
+                    connectButton.Text = "Disconectar";
+                    Log(SystemMsg("Estás agora conectado"));
+                }
+                else
+                {
+                    usernameTextBox.Enabled = true;
+                    passwordTextBox.Enabled = true;
+                    connectButton.Text = "Conectar";
+                    Log(SystemMsg("Estás agora disconectado"));
+                }
+            });
         }
 
         private void CloseClient()
@@ -159,10 +159,10 @@ namespace Cliente
             {
                 byte[] eot = protocolSI.Make(ProtocolSICmdType.EOT);
                 networkStream.Write(eot, 0, eot.Length);
-                // existe algum problema na parte do .Read que faz crashar o cliente ou então é problema do servidor
                 networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
                 networkStream.Close();
                 client.Close();
+
                 Connected(false);
                 Log();
             }
@@ -170,7 +170,6 @@ namespace Cliente
 
         private void Client_FormClosing(object sender, FormClosingEventArgs e)
         {
-            exit = true;
             if (connected)
             {
                 CloseClient();
@@ -230,11 +229,111 @@ namespace Cliente
             }
         }
 
+        public Boolean VerificarUsername()
+        {
+            DB db = new DB();
+
+            String username = usernameTextBox.Text;
+
+            DataTable table = new DataTable();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `username` = @usn", db.ObterConexao());
+
+            command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            // Verifica se o utilizador já existe
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public Boolean VerificarValoresDasCaixasDeTexto()
+        {
+            String uname = usernameTextBox.Text;
+            String pass = passwordTextBox.Text;
+
+            // Verificar se as caixas de texto não têm os seguintes nomes ou estão vazias
+            if (uname.Equals("username") || pass.Equals("password") || uname.Equals("") || pass.Equals(""))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         private void RegistarButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Registo registarform = new Registo();
-            registarform.Show();
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand("INSERT INTO `users`(`id`, `username`, `password`) VALUES (@id, @usn, @pass)", db.ObterConexao());
+
+            //Parametros a serem inseridos na base de dados
+            command.Parameters.Add("@id", MySqlDbType.VarChar).Value = Guid.NewGuid().ToString(); // ID unico que cada conta tem
+            command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = usernameTextBox.Text; // Username
+            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = passwordTextBox.Text; // Password
+
+            // Abrir conexão com a base de dados
+            db.AbrirConexao();
+
+            // Verifica se a caixa de texto tem valores 
+            if (!VerificarValoresDasCaixasDeTexto())
+            {
+                // Verifica se o utilizador já existe e mostra mensagem
+                if (VerificarUsername())
+                {
+                    //Mostra mensagem de erro
+                    MessageBox.Show(
+                        "Esse utilizador já existe seleciona um diferente",
+                        "Utilizador duplicado",
+                        MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Error
+                    );
+                }
+                else
+                {
+                    // Executa a query e mostra mensagem
+                    if (command.ExecuteNonQuery() == 1)
+                    {
+                        //Mostra mensagem de informação
+                        MessageBox.Show(
+                            "A tua conta foi criada",
+                            "Conta Criada",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information
+                        );
+                    }
+                    else
+                    {
+                        //Mostra mensagem de erro
+                        MessageBox.Show("ERRO");
+                    }
+                }
+            }
+            else
+            {
+                //Mostra mensagem de erro
+                MessageBox.Show(
+                    "Insere as primeiras informações",
+                    "Informação vazia",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            // Fecha a conexão com a base de dados
+            db.FecharConexao();
         }
     }
 }

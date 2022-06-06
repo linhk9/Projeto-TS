@@ -60,4 +60,3 @@ C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\b
 C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\K4os.Compression.LZ4.Streams.xml
 C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\K4os.Hash.xxHash.xml
 C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\bin\Debug\MySql.Data.xml
-C:\Users\Filipe Marques\OneDrive - IPLeiria\Topicos de Segurança\Chat\Cliente\obj\Debug\Cliente.Registo.resources

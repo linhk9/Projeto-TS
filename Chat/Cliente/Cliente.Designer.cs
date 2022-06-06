@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.connectButton = new System.Windows.Forms.Button();
-            this.localaddrLabel = new System.Windows.Forms.Label();
             this.logTextBox = new System.Windows.Forms.TextBox();
             this.sendLabel = new System.Windows.Forms.Label();
             this.sendTextBox = new System.Windows.Forms.TextBox();
             this.clearButton = new System.Windows.Forms.Button();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
-            this.addrTextBox = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.registarButton = new System.Windows.Forms.Button();
@@ -53,16 +51,6 @@
             this.connectButton.Text = "Conectar";
             this.connectButton.UseVisualStyleBackColor = true;
             this.connectButton.Click += new System.EventHandler(this.ConnectButton_Click);
-            // 
-            // localaddrLabel
-            // 
-            this.localaddrLabel.AutoSize = true;
-            this.localaddrLabel.Location = new System.Drawing.Point(385, 16);
-            this.localaddrLabel.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
-            this.localaddrLabel.Name = "localaddrLabel";
-            this.localaddrLabel.Size = new System.Drawing.Size(56, 13);
-            this.localaddrLabel.TabIndex = 26;
-            this.localaddrLabel.Text = "Endereço:";
             // 
             // logTextBox
             // 
@@ -113,7 +101,7 @@
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(385, 49);
+            this.usernameLabel.Location = new System.Drawing.Point(383, 16);
             this.usernameLabel.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(58, 13);
@@ -122,7 +110,7 @@
             // 
             // usernameTextBox
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(451, 46);
+            this.usernameTextBox.Location = new System.Drawing.Point(449, 13);
             this.usernameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.usernameTextBox.MaxLength = 50;
             this.usernameTextBox.Name = "usernameTextBox";
@@ -132,23 +120,10 @@
             this.usernameTextBox.Text = "Joe";
             this.usernameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // addrTextBox
-            // 
-            this.addrTextBox.Location = new System.Drawing.Point(449, 13);
-            this.addrTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.addrTextBox.MaxLength = 200;
-            this.addrTextBox.Name = "addrTextBox";
-            this.addrTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.addrTextBox.Size = new System.Drawing.Size(132, 20);
-            this.addrTextBox.TabIndex = 39;
-            this.addrTextBox.TabStop = false;
-            this.addrTextBox.Text = "127.0.0.1";
-            this.addrTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(383, 77);
+            this.passwordLabel.Location = new System.Drawing.Point(383, 44);
             this.passwordLabel.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(56, 13);
@@ -157,7 +132,7 @@
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(449, 74);
+            this.passwordTextBox.Location = new System.Drawing.Point(449, 41);
             this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.passwordTextBox.MaxLength = 50;
             this.passwordTextBox.Name = "passwordTextBox";
@@ -170,10 +145,10 @@
             // 
             // registarButton
             // 
-            this.registarButton.Location = new System.Drawing.Point(137, 13);
+            this.registarButton.Location = new System.Drawing.Point(386, 65);
             this.registarButton.Margin = new System.Windows.Forms.Padding(4);
             this.registarButton.Name = "registarButton";
-            this.registarButton.Size = new System.Drawing.Size(116, 28);
+            this.registarButton.Size = new System.Drawing.Size(195, 28);
             this.registarButton.TabIndex = 42;
             this.registarButton.TabStop = false;
             this.registarButton.Text = "Registar";
@@ -187,7 +162,6 @@
             this.Controls.Add(this.registarButton);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.passwordTextBox);
-            this.Controls.Add(this.addrTextBox);
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.clearButton);
@@ -195,7 +169,6 @@
             this.Controls.Add(this.sendTextBox);
             this.Controls.Add(this.logTextBox);
             this.Controls.Add(this.connectButton);
-            this.Controls.Add(this.localaddrLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -212,14 +185,12 @@
         #endregion
 
         private System.Windows.Forms.Button connectButton;
-        private System.Windows.Forms.Label localaddrLabel;
         private System.Windows.Forms.TextBox logTextBox;
         private System.Windows.Forms.Label sendLabel;
         private System.Windows.Forms.TextBox sendTextBox;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.TextBox usernameTextBox;
-        private System.Windows.Forms.TextBox addrTextBox;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button registarButton;

@@ -102,12 +102,6 @@
     <Compile Include="DB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Registo.Designer.cs">
-      <DependentUpon>Registo.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Cliente.resx">
       <DependentUpon>Cliente.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -121,9 +115,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Registo.resx">
-      <DependentUpon>Registo.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
