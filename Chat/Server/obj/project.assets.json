@@ -8,24 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Filipe Marques\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\rodri\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Filipe Marques\\OneDrive - IPLeiria\\Topicos de Segurança\\Chat\\Server\\Server.csproj",
+      "projectUniqueName": "C:\\Users\\rodri\\Desktop\\Chat\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "C:\\Users\\Filipe Marques\\OneDrive - IPLeiria\\Topicos de Segurança\\Chat\\Server\\Server.csproj",
-      "packagesPath": "C:\\Users\\Filipe Marques\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Filipe Marques\\OneDrive - IPLeiria\\Topicos de Segurança\\Chat\\Server\\obj\\",
+      "projectPath": "C:\\Users\\rodri\\Desktop\\Chat\\Server\\Server.csproj",
+      "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rodri\\Desktop\\Chat\\Server\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Filipe Marques\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\rodri\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -65,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

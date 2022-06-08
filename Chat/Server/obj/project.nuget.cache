@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fBAoTCyHiAS0l5TgCYl1Aq5NoDPSWIzFrhyOOJ7i0E8TuqS7dGNCK4sBsqyg+u81hppn3AC3U4jdkxGTrCftyQ==",
+  "dgSpecHash": "w3ZHenScV3QB/6d8eSn4ijPyCt2kFk7BlHLaSlakp9/wZSyZaXdvoQ4l5WSaKWt3eSJ27Jci9VwGAhaYmKF7Fw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Filipe Marques\\OneDrive - IPLeiria\\Topicos de Segurança\\Chat\\Server\\Server.csproj",
+  "projectFilePath": "C:\\Users\\rodri\\Desktop\\Chat\\Server\\Server.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

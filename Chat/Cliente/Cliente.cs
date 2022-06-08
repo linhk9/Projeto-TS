@@ -7,6 +7,10 @@ using MySql.Data.MySqlClient;
 using Database;
 using System.Data;
 using System.Threading;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Diagnostics;
 
 namespace Cliente
 {
@@ -53,6 +57,11 @@ namespace Cliente
 
         private void ConnectButton_Click(object sender, EventArgs e)
         {
+            Connect();
+        }
+
+        private void Connect()
+        {
             CheckAuth();
 
             if (UserAuthed)
@@ -60,8 +69,8 @@ namespace Cliente
                 if (connected)
                 {
                     CloseClient();
-                } 
-                else if (client == null || !client.Connected) 
+                }
+                else if (client == null || !client.Connected)
                 {
                     try
                     {
@@ -83,7 +92,7 @@ namespace Cliente
                         Log(ErrorMsg("Erro ao connectar ao servidor!"));
                     }
                 }
-            }            
+            }
         }
 
         private void SendTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -276,6 +285,11 @@ namespace Cliente
 
         private void RegistarButton_Click(object sender, EventArgs e)
         {
+            Registar();
+        }
+
+        private void Registar()
+        {
             DB db = new DB();
             MySqlCommand command = new MySqlCommand("INSERT INTO `users`(`id`, `username`, `password`) VALUES (@id, @usn, @pass)", db.ObterConexao());
 
@@ -334,6 +348,32 @@ namespace Cliente
 
             // Fecha a conexão com a base de dados
             db.FecharConexao();
+        }
+
+        private void Cliente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void limparToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Connect();
+        }
+
+        private void conectarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            cliente.Show();
+        }
+
+        private void limparChatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Log();
+        }
+
+        private void registarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registar();
         }
     }
 }

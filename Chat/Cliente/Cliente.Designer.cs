@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cliente));
             this.connectButton = new System.Windows.Forms.Button();
             this.logTextBox = new System.Windows.Forms.TextBox();
             this.sendLabel = new System.Windows.Forms.Label();
@@ -38,11 +39,18 @@
             this.passwordLabel = new System.Windows.Forms.Label();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.registarButton = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.acessoRápidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.conectarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.limparToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.limparChatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // connectButton
             // 
-            this.connectButton.Location = new System.Drawing.Point(13, 13);
+            this.connectButton.Location = new System.Drawing.Point(13, 38);
             this.connectButton.Margin = new System.Windows.Forms.Padding(4);
             this.connectButton.Name = "connectButton";
             this.connectButton.Size = new System.Drawing.Size(116, 28);
@@ -55,7 +63,7 @@
             // logTextBox
             // 
             this.logTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.logTextBox.Location = new System.Drawing.Point(13, 139);
+            this.logTextBox.Location = new System.Drawing.Point(13, 164);
             this.logTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.logTextBox.Multiline = true;
             this.logTextBox.Name = "logTextBox";
@@ -68,7 +76,7 @@
             // sendLabel
             // 
             this.sendLabel.AutoSize = true;
-            this.sendLabel.Location = new System.Drawing.Point(10, 90);
+            this.sendLabel.Location = new System.Drawing.Point(10, 115);
             this.sendLabel.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.sendLabel.Name = "sendLabel";
             this.sendLabel.Size = new System.Drawing.Size(92, 13);
@@ -77,7 +85,7 @@
             // 
             // sendTextBox
             // 
-            this.sendTextBox.Location = new System.Drawing.Point(13, 111);
+            this.sendTextBox.Location = new System.Drawing.Point(13, 136);
             this.sendTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.sendTextBox.Name = "sendTextBox";
             this.sendTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -88,7 +96,7 @@
             // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(13, 49);
+            this.clearButton.Location = new System.Drawing.Point(13, 74);
             this.clearButton.Margin = new System.Windows.Forms.Padding(4);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(116, 28);
@@ -101,7 +109,7 @@
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(383, 16);
+            this.usernameLabel.Location = new System.Drawing.Point(383, 41);
             this.usernameLabel.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(58, 13);
@@ -110,7 +118,7 @@
             // 
             // usernameTextBox
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(449, 13);
+            this.usernameTextBox.Location = new System.Drawing.Point(449, 38);
             this.usernameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.usernameTextBox.MaxLength = 50;
             this.usernameTextBox.Name = "usernameTextBox";
@@ -123,7 +131,7 @@
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(383, 44);
+            this.passwordLabel.Location = new System.Drawing.Point(383, 69);
             this.passwordLabel.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(56, 13);
@@ -132,7 +140,7 @@
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(449, 41);
+            this.passwordTextBox.Location = new System.Drawing.Point(449, 66);
             this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.passwordTextBox.MaxLength = 50;
             this.passwordTextBox.Name = "passwordTextBox";
@@ -145,7 +153,7 @@
             // 
             // registarButton
             // 
-            this.registarButton.Location = new System.Drawing.Point(386, 65);
+            this.registarButton.Location = new System.Drawing.Point(386, 90);
             this.registarButton.Margin = new System.Windows.Forms.Padding(4);
             this.registarButton.Name = "registarButton";
             this.registarButton.Size = new System.Drawing.Size(195, 28);
@@ -155,10 +163,63 @@
             this.registarButton.UseVisualStyleBackColor = true;
             this.registarButton.Click += new System.EventHandler(this.RegistarButton_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.acessoRápidoToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(594, 24);
+            this.menuStrip1.TabIndex = 43;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // acessoRápidoToolStripMenuItem
+            // 
+            this.acessoRápidoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.conectarToolStripMenuItem,
+            this.limparToolStripMenuItem,
+            this.registarToolStripMenuItem,
+            this.limparChatToolStripMenuItem});
+            this.acessoRápidoToolStripMenuItem.Name = "acessoRápidoToolStripMenuItem";
+            this.acessoRápidoToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.acessoRápidoToolStripMenuItem.Text = "Acesso Rápido";
+            // 
+            // conectarToolStripMenuItem
+            // 
+            this.conectarToolStripMenuItem.Name = "conectarToolStripMenuItem";
+            this.conectarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.conectarToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.conectarToolStripMenuItem.Text = "Abrir novo chat";
+            this.conectarToolStripMenuItem.Click += new System.EventHandler(this.conectarToolStripMenuItem_Click);
+            // 
+            // limparToolStripMenuItem
+            // 
+            this.limparToolStripMenuItem.Name = "limparToolStripMenuItem";
+            this.limparToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
+            this.limparToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.limparToolStripMenuItem.Text = "Conectar";
+            this.limparToolStripMenuItem.Click += new System.EventHandler(this.limparToolStripMenuItem_Click);
+            // 
+            // registarToolStripMenuItem
+            // 
+            this.registarToolStripMenuItem.Name = "registarToolStripMenuItem";
+            this.registarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
+            this.registarToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.registarToolStripMenuItem.Text = "Registar";
+            this.registarToolStripMenuItem.Click += new System.EventHandler(this.registarToolStripMenuItem_Click);
+            // 
+            // limparChatToolStripMenuItem
+            // 
+            this.limparChatToolStripMenuItem.Name = "limparChatToolStripMenuItem";
+            this.limparChatToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
+            this.limparChatToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.limparChatToolStripMenuItem.Text = "Limpar Chat";
+            this.limparChatToolStripMenuItem.Click += new System.EventHandler(this.limparChatToolStripMenuItem_Click);
+            // 
             // Cliente
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(594, 453);
+            this.ClientSize = new System.Drawing.Size(594, 490);
             this.Controls.Add(this.registarButton);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.passwordTextBox);
@@ -169,14 +230,19 @@
             this.Controls.Add(this.sendTextBox);
             this.Controls.Add(this.logTextBox);
             this.Controls.Add(this.connectButton);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Cliente";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chat | Cliente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Client_FormClosing);
+            this.Load += new System.EventHandler(this.Cliente_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,6 +260,12 @@
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button registarButton;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem acessoRápidoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem conectarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem limparToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem limparChatToolStripMenuItem;
     }
 }
 
