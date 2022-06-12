@@ -1,0 +1,588 @@
+
+Log: 19:24:53 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:25:03 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:25:36 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:25:42 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:26:29 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:28:23 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:28:37 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:33:21 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:33:32 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:33:33 9 de junho de 2022
+  :teste
+-------------------------------
+
+Log: 19:39:55 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:40:01 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:40:34 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:40:40 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:41:59 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:42:04 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:45:19 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:45:53 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:46:01 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:46:50 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:46:56 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:48:58 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:49:20 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:51:20 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:51:25 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:53:50 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:53:54 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:55:39 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:55:43 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:56:17 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:56:21 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:58:18 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:58:22 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:58:48 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:59:10 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:59:55 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:59:59 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:00:44 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:00:47 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:02:27 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:02:31 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:03:01 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:03:05 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:05:16 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:05:20 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:06:30 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:06:34 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:07:29 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:07:32 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:10:34 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:10:40 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:10:41 9 de junho de 2022
+  :Cliente 1: 1
+-------------------------------
+
+Log: 20:10:48 9 de junho de 2022
+  :SISTEMA: A acabar thread para o cliente 1
+-------------------------------
+
+Log: 20:11:01 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:11:14 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:11:18 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:11:20 9 de junho de 2022
+  :Cliente : 
+-------------------------------
+
+Log: 20:12:42 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:12:46 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:12:47 9 de junho de 2022
+  :Cliente : 
+-------------------------------
+
+Log: 20:12:49 9 de junho de 2022
+  :Cliente : 
+-------------------------------
+
+Log: 20:12:50 9 de junho de 2022
+  :Cliente : 
+-------------------------------
+
+Log: 20:13:13 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:13:17 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:13:18 9 de junho de 2022
+  :Cliente : 
+-------------------------------
+
+Log: 20:17:38 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:17:41 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:17:42 9 de junho de 2022
+  :Cliente : 
+-------------------------------
+
+Log: 20:18:37 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:18:41 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:18:42 9 de junho de 2022
+  :Cliente : 
+-------------------------------
+
+Log: 20:19:59 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:20:03 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:20:04 9 de junho de 2022
+  :Cliente filipe: teste
+-------------------------------
+
+Log: 20:20:26 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:20:30 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:20:31 9 de junho de 2022
+  :Cliente filipe: teste
+-------------------------------
+
+Log: 20:25:02 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:25:26 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:25:30 9 de junho de 2022
+  :SISTEMA: Cliente #2 conectado
+-------------------------------
+
+Log: 20:25:32 9 de junho de 2022
+  :Cliente filipe: teste
+-------------------------------
+
+Log: 20:25:35 9 de junho de 2022
+  :Cliente filipe111: ola
+-------------------------------
+
+Log: 20:26:05 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:26:11 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:26:12 9 de junho de 2022
+  :Cliente filipe: teste
+-------------------------------
+
+Log: 20:27:50 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:27:59 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:30:31 9 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:30:44 9 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:30:51 9 de junho de 2022
+  :SISTEMA: Cliente #2 conectado
+-------------------------------
+
+Log: 20:30:52 9 de junho de 2022
+  :Cliente filipe111: teste
+-------------------------------
+
+Log: 20:30:55 9 de junho de 2022
+  :Cliente filipe111: aaaa
+-------------------------------
+
+Log: 20:30:59 9 de junho de 2022
+  :Cliente filipe: awtawt
+-------------------------------
+
+Log: 20:31:00 9 de junho de 2022
+  :Cliente filipe: teste
+-------------------------------
+
+Log: 18:43:19 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 18:43:24 12 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 18:43:26 12 de junho de 2022
+  :Cliente filipe: teste
+-------------------------------
+
+Log: 18:48:21 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 18:48:25 12 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 18:48:27 12 de junho de 2022
+  :O Cliente filipe enviou a mensagem: teste
+-------------------------------
+
+Log: 18:48:34 12 de junho de 2022
+  :SISTEMA: A acabar thread para o cliente filipe
+-------------------------------
+
+Log: 18:58:40 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 18:58:45 12 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 18:58:46 12 de junho de 2022
+  :O Cliente filipe enviou a mensagem: teste
+-------------------------------
+
+Log: 19:00:47 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:00:51 12 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:00:52 12 de junho de 2022
+  :SISTEMA: A acabar thread para o cliente filipe
+-------------------------------
+
+Log: 19:01:38 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:01:42 12 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:01:44 12 de junho de 2022
+  :O Cliente filipe enviou a mensagem: teste
+-------------------------------
+
+Log: 19:01:45 12 de junho de 2022
+  :SISTEMA: A acabar thread para o cliente filipe
+-------------------------------
+
+Log: 19:01:49 12 de junho de 2022
+  :SISTEMA: Cliente #2 conectado
+-------------------------------
+
+Log: 19:01:54 12 de junho de 2022
+  :SISTEMA: A acabar thread para o cliente filipe
+-------------------------------
+
+Log: 19:02:05 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:02:08 12 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:02:09 12 de junho de 2022
+  :O Cliente filipe enviou a mensagem: teste
+-------------------------------
+
+Log: 19:02:10 12 de junho de 2022
+  :SISTEMA: A acabar thread para o cliente filipe
+-------------------------------
+
+Log: 19:31:56 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:33:36 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:36:00 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:39:26 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:44:48 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:49:08 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:49:24 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:51:15 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:55:11 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:58:08 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:00:12 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:00:52 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:03:30 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:06:34 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:06:38 12 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:06:40 12 de junho de 2022
+  :SISTEMA: A acabar thread para o cliente filipe
+-------------------------------
+
+Log: 20:06:42 12 de junho de 2022
+  :SISTEMA: Cliente #2 conectado
+-------------------------------
+
+Log: 20:06:46 12 de junho de 2022
+  :SISTEMA: A acabar thread para o cliente filipe
+-------------------------------
+
+Log: 20:10:41 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:10:51 12 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:10:54 12 de junho de 2022
+  :SISTEMA: A acabar thread para o cliente filipe
+-------------------------------
+
+Log: 20:10:56 12 de junho de 2022
+  :SISTEMA: Cliente #2 conectado
+-------------------------------
+
+Log: 20:11:06 12 de junho de 2022
+  :SISTEMA: A acabar thread para o cliente filipe
+-------------------------------
+
+Log: 20:11:11 12 de junho de 2022
+  :SISTEMA: Cliente #3 conectado
+-------------------------------
+
+Log: 20:11:15 12 de junho de 2022
+  :SISTEMA: A acabar thread para o cliente filipe
+-------------------------------
+
+Log: 20:12:11 12 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 20:12:18 12 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 20:12:19 12 de junho de 2022
+  :SISTEMA: A acabar thread para o cliente filipe
+-------------------------------
+
+Log: 20:12:23 12 de junho de 2022
+  :SISTEMA: Cliente #2 conectado
+-------------------------------
+
+Log: 20:12:29 12 de junho de 2022
+  :SISTEMA: A acabar thread para o cliente filipe
+-------------------------------

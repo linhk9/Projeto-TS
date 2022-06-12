@@ -1,15 +1,16 @@
 ﻿using EI.SI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Newtonsoft.Json;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Server
 {
+    public class Utilizador
+    {
+        public string? Username { get; set; }
+        public string? Mensagem { get; set; }
+    }
+
     internal class Program
     {
         //criar novamente uma constante tal como no lado do cliente
@@ -32,11 +33,11 @@ namespace Server
             {
                 TcpClient client = listener.AcceptTcpClient();
                 clientCounter++;
-                Logs.Escrever(Logs.SystemMsg(string.Format("Cliente {0} conectado", clientCounter)));
+                Logs.Escrever(Logs.SystemMsg(string.Format("Cliente #{0} conectado", clientCounter)));
 
                 //definicao da variavel
                 //clientHandler do tipo ClientHandler
-                ClientHandler clientHandler = new(client, clientCounter);
+                ClientHandler clientHandler = new(client);
                 clientHandler.Handle();
             }
         }
@@ -45,12 +46,10 @@ namespace Server
     class ClientHandler
     {
         private readonly TcpClient client;
-        private readonly int clientID;
 
-        public ClientHandler(TcpClient client, int clientID)
+        public ClientHandler(TcpClient client)
         {
             this.client = client;
-            this.clientID = clientID;
         }
 
         public void Handle()
@@ -66,19 +65,23 @@ namespace Server
 
             while (protocolSI.GetCmdType() != ProtocolSICmdType.EOT)
             {
-                int bytesRead = networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
+                networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
                 byte[] ack;
+
+                string jsonString = protocolSI.GetStringFromData();
+                Utilizador? utilizador = JsonConvert.DeserializeObject<Utilizador>(jsonString);
 
                 switch (protocolSI.GetCmdType())
                 {
                     case ProtocolSICmdType.DATA:
-                        Logs.Escrever(string.Format("{0}: {1}", clientID, protocolSI.GetStringFromData()));
+                        Logs.Escrever(string.Format("O Cliente {0} enviou a mensagem: {1}", utilizador?.Username, utilizador?.Mensagem));
 
-                        ack = protocolSI.Make(ProtocolSICmdType.ACK);
+                        ack = protocolSI.Make(ProtocolSICmdType.DATA, jsonString);
                         networkStream.Write(ack, 0, ack.Length);
                         break;
                     case ProtocolSICmdType.EOT:
-                        Logs.Escrever(Logs.SystemMsg(string.Format("A acabar thread para o cliente {0}", clientID)));
+                        Logs.Escrever(Logs.SystemMsg(string.Format("A acabar thread para o cliente {0}", utilizador?.Username)));
+
                         ack = protocolSI.Make(ProtocolSICmdType.ACK);
                         networkStream.Write(ack, 0, ack.Length);
                         break;
@@ -95,6 +98,9 @@ namespace Server
         public static void Escrever(string msg = "") 
         {
             Console.WriteLine(string.Format("[ {0} ] {1}{2}", DateTime.Now.ToString("HH:mm"), msg, Environment.NewLine));
+
+            using StreamWriter w = File.AppendText("log.txt");
+            WriteInFile(msg, w);
         }
 
         public static string ErrorMsg(string msg)
@@ -105,6 +111,14 @@ namespace Server
         public static string SystemMsg(string msg)
         {
             return string.Format("SISTEMA: {0}", msg);
+        }
+
+        public static void WriteInFile(string logMessage, TextWriter w)
+        {
+            w.Write("\r\nLog: ");
+            w.WriteLine($"{DateTime.Now.ToLongTimeString()} {DateTime.Now.ToLongDateString()}");
+            w.WriteLine($"  :{logMessage}");
+            w.WriteLine("-------------------------------");
         }
     }
 }

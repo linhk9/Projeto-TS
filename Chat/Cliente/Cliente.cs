@@ -7,10 +7,9 @@ using MySql.Data.MySqlClient;
 using Database;
 using System.Data;
 using System.Threading;
-using System.Collections.Generic;
+using Newtonsoft.Json;
+using System.Security.Cryptography;
 using System.Linq;
-using System.Text;
-using System.Diagnostics;
 
 namespace Cliente
 {
@@ -19,48 +18,21 @@ namespace Cliente
         private bool connected = false;
         private bool UserAuthed = false;
 
+        private const int NUMBER_OF_ITERATIONS = 50000;
+
         private const int PORT = 10000;
-        ProtocolSI protocolSI;
         NetworkStream networkStream;
+        ProtocolSI protocolSI;
         TcpClient client;
 
         public Cliente()
         {
             InitializeComponent();
+
             protocolSI = new ProtocolSI();
         }
 
-        private void Log(string msg = "")
-        {
-            logTextBox.Invoke((MethodInvoker)delegate
-            {
-                if (msg.Length > 0)
-                {
-                    logTextBox.AppendText(string.Format("[ {0} ] {1}{2}", DateTime.Now.ToString("HH:mm"), msg, Environment.NewLine));
-                }
-                else
-                {
-                    logTextBox.Clear();
-                }
-            });
-        }
-
-        private string ErrorMsg(string msg)
-        {
-            return string.Format("ERRO: {0}", msg);
-        }
-
-        private string SystemMsg(string msg)
-        {
-            return string.Format("SISTEMA: {0}", msg);
-        }
-
         private void ConnectButton_Click(object sender, EventArgs e)
-        {
-            Connect();
-        }
-
-        private void Connect()
         {
             CheckAuth();
 
@@ -69,8 +41,8 @@ namespace Cliente
                 if (connected)
                 {
                     CloseClient();
-                }
-                else if (client == null || !client.Connected)
+                } 
+                else if (client == null || !client.Connected) 
                 {
                     try
                     {
@@ -92,7 +64,7 @@ namespace Cliente
                         Log(ErrorMsg("Erro ao connectar ao servidor!"));
                     }
                 }
-            }
+            }            
         }
 
         private void SendTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -104,14 +76,23 @@ namespace Cliente
 
                 if (sendTextBox.Text.Length > 0)
                 {
-                    string msg = sendTextBox.Text;
-                    sendTextBox.Clear();
-                    Log(string.Format("{0} (Eu): {1}", usernameTextBox.Text, msg));
-
                     if (connected)
                     {
-                        byte[] packet = protocolSI.Make(ProtocolSICmdType.DATA, msg);
+                        string msg = sendTextBox.Text;
+                        sendTextBox.Clear();
+
+                        var utilizador = new Utilizador
+                        {
+                            Username = usernameTextBox.Text,
+                            Mensagem = msg
+                        };
+
+                        string jsonString = JsonConvert.SerializeObject(utilizador);
+
+                        byte[] packet = protocolSI.Make(ProtocolSICmdType.DATA, jsonString);
                         networkStream.Write(packet, 0, packet.Length);
+
+                        Log(string.Format("{0} (Eu): {1}", usernameTextBox.Text, msg));
                     }
                 }
             }
@@ -125,17 +106,23 @@ namespace Cliente
                 {
                     try
                     {
-                        networkStream = client.GetStream();
                         networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
-                        string mensagem = protocolSI.GetStringFromData();
-                        Log(string.Format("Outro User: {0}", mensagem));
+
+                        string jsonString = protocolSI.GetStringFromData();
+                        Utilizador utilizador = JsonConvert.DeserializeObject<Utilizador>(jsonString);
+
+                        if (utilizador.Username != usernameTextBox.Text)
+                        {
+                            Log(string.Format("{0}: {1}", utilizador.Username, utilizador.Mensagem));
+                        }
                     }
                     catch
                     {
                         Log(ErrorMsg("Erro ao receber mensagem!"));
                     }
                 }
-                
+
+                Thread.Sleep(1000);
             }
             
         }
@@ -156,6 +143,7 @@ namespace Cliente
                 {
                     usernameTextBox.Enabled = true;
                     passwordTextBox.Enabled = true;
+                    UserAuthed = false;
                     connectButton.Text = "Conectar";
                     Log(SystemMsg("Estás agora disconectado"));
                 }
@@ -166,9 +154,15 @@ namespace Cliente
         {
             if (connected)
             {
-                byte[] eot = protocolSI.Make(ProtocolSICmdType.EOT);
+                var utilizador = new Utilizador
+                {
+                    Username = usernameTextBox.Text
+                };
+
+                string jsonString = JsonConvert.SerializeObject(utilizador);
+                byte[] eot = protocolSI.Make(ProtocolSICmdType.EOT, jsonString);
+
                 networkStream.Write(eot, 0, eot.Length);
-                networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
                 networkStream.Close();
                 client.Close();
 
@@ -200,41 +194,66 @@ namespace Cliente
             DataTable table = new DataTable();
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `username` = @usn and `password` = @pass", db.ObterConexao());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `username` = @usn", db.ObterConexao());
 
             db.AbrirConexao();
 
             command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
-            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = password;
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
-            if (db.ObterConexao().State == ConnectionState.Open)
-            {
-                db.FecharConexao();
-            }
+            MySqlDataReader reader;
+            reader = command.ExecuteReader();
 
-            // Verificar se o utilizador existe ou não
-            if (table.Rows.Count > 0)
+            if (!reader.HasRows)
             {
-                UserAuthed = true;
-            }
+                Log(ErrorMsg("A conta com esses dados não existe"));
+            } 
             else
             {
-                // Verificar se as informações de login estão existem e estão corretas
-                if (username.Trim().Equals(""))
+                var SaltPassword = new SaltPassword();
+
+                // Ler resultado da pesquisa
+                while (reader.Read())
                 {
-                    Log(ErrorMsg("Username necessário"));
+                    // Obter Hash (password + salt)
+                    SaltPassword.Password = (byte[])reader.GetValue(3);
+
+                    // Obter salt
+                    SaltPassword.Salt = (byte[])reader.GetValue(2);
                 }
-                else if (password.Trim().Equals(""))
+
+                reader.Close();
+
+                byte[] hash = GenerateSaltedHash(password, SaltPassword.Salt);
+
+                // Verificar se o utilizador existe ou não
+                if (SaltPassword.Password.SequenceEqual(hash))
                 {
-                    Log(ErrorMsg("Password necessária"));
+                    UserAuthed = true;
                 }
                 else
                 {
-                    Log(ErrorMsg("Username/Password errada ou a conta não existe"));
+                    // Verificar se as informações de login estão existem e estão corretas
+                    if (username.Trim().Equals(""))
+                    {
+                        Log(ErrorMsg("Username necessário"));
+                    }
+                    else if (password.Trim().Equals(""))
+                    {
+                        Log(ErrorMsg("Password necessária"));
+                    }
+                    else
+                    {
+                        Log(ErrorMsg("Username/Password errada"));
+                    }
                 }
+            }
+
+            if (db.ObterConexao().State == ConnectionState.Open)
+            {
+                db.FecharConexao();
             }
         }
 
@@ -242,7 +261,7 @@ namespace Cliente
         {
             DB db = new DB();
 
-            String username = usernameTextBox.Text;
+            string username = usernameTextBox.Text;
 
             DataTable table = new DataTable();
 
@@ -269,8 +288,8 @@ namespace Cliente
 
         public Boolean VerificarValoresDasCaixasDeTexto()
         {
-            String uname = usernameTextBox.Text;
-            String pass = passwordTextBox.Text;
+            string uname = usernameTextBox.Text;
+            string pass = passwordTextBox.Text;
 
             // Verificar se as caixas de texto não têm os seguintes nomes ou estão vazias
             if (uname.Equals("username") || pass.Equals("password") || uname.Equals("") || pass.Equals(""))
@@ -285,18 +304,20 @@ namespace Cliente
 
         private void RegistarButton_Click(object sender, EventArgs e)
         {
-            Registar();
-        }
-
-        private void Registar()
-        {
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand("INSERT INTO `users`(`id`, `username`, `password`) VALUES (@id, @usn, @pass)", db.ObterConexao());
+            MySqlCommand command = new MySqlCommand("INSERT INTO `users`(`id`, `username`, `salt`, `password`) VALUES (@id, @usn, @salt, @pass)", db.ObterConexao());
 
-            //Parametros a serem inseridos na base de dados
+            // Gerar Salt
+            byte[] salt = GenerateSalt(8);
+            // Gerar Salted Password
+            byte[] saltedPassword = GenerateSaltedHash(passwordTextBox.Text, salt);
+
+            // Parametros a serem inseridos na base de dados
             command.Parameters.Add("@id", MySqlDbType.VarChar).Value = Guid.NewGuid().ToString(); // ID unico que cada conta tem
             command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = usernameTextBox.Text; // Username
-            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = passwordTextBox.Text; // Password
+
+            command.Parameters.Add("@salt", MySqlDbType.Binary).Value = salt; // salt
+            command.Parameters.Add("@pass", MySqlDbType.Binary).Value = saltedPassword; // Salted Password
 
             // Abrir conexão com a base de dados
             db.AbrirConexao();
@@ -350,30 +371,56 @@ namespace Cliente
             db.FecharConexao();
         }
 
-        private void Cliente_Load(object sender, EventArgs e)
+        private static byte[] GenerateSalt(int size)
         {
-
+            //Generate a cryptographic random number.
+            RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
+            byte[] buff = new byte[size];
+            rng.GetBytes(buff);
+            return buff;
         }
 
-        private void limparToolStripMenuItem_Click(object sender, EventArgs e)
+        private static byte[] GenerateSaltedHash(string plainText, byte[] salt)
         {
-            Connect();
+            Rfc2898DeriveBytes rfc2898 = new Rfc2898DeriveBytes(plainText, salt, NUMBER_OF_ITERATIONS);
+            return rfc2898.GetBytes(32);
         }
 
-        private void conectarToolStripMenuItem_Click(object sender, EventArgs e)
+        public void Log(string msg = "")
         {
-            Cliente cliente = new Cliente();
-            cliente.Show();
+            logTextBox.Invoke((MethodInvoker)delegate
+            {
+                if (msg.Length > 0)
+                {
+                    logTextBox.AppendText(string.Format("[ {0} ] {1}{2}", DateTime.Now.ToString("HH:mm"), msg, Environment.NewLine));
+                }
+                else
+                {
+                    logTextBox.Clear();
+                }
+            });
         }
 
-        private void limparChatToolStripMenuItem_Click(object sender, EventArgs e)
+        public string ErrorMsg(string msg)
         {
-            Log();
+            return string.Format("ERRO: {0}", msg);
         }
 
-        private void registarToolStripMenuItem_Click(object sender, EventArgs e)
+        public string SystemMsg(string msg)
         {
-            Registar();
+            return string.Format("SISTEMA: {0}", msg);
         }
+    }
+
+    public class SaltPassword
+    {
+        public byte[] Salt { get; set; }
+        public byte[] Password { get; set; }
+    }
+
+    public class Utilizador
+    {
+        public string Username { get; set; }
+        public string Mensagem { get; set; }
     }
 }

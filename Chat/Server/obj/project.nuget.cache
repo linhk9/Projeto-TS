@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "w3ZHenScV3QB/6d8eSn4ijPyCt2kFk7BlHLaSlakp9/wZSyZaXdvoQ4l5WSaKWt3eSJ27Jci9VwGAhaYmKF7Fw==",
+  "dgSpecHash": "SXlENFf6c53gAMniG/cVIa9R3HpwYfsS/QQfDzzjRSqUC7FtWtrOCpxmiijADTXYYPYEC6xu/dZJKU+RuY/eOw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rodri\\Desktop\\Chat\\Server\\Server.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Filipe Marques\\OneDrive - IPLeiria\\Topicos de Segurança\\Chat\\Server\\Server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Filipe Marques\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
