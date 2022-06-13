@@ -1,0 +1,32 @@
+
+Log: 18:36:07 13 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 18:36:24 13 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 18:36:26 13 de junho de 2022
+  :SISTEMA: A acabar thread para o cliente teste
+-------------------------------
+
+Log: 19:00:49 13 de junho de 2022
+  :SISTEMA: Servidor Iniciado
+-------------------------------
+
+Log: 19:01:05 13 de junho de 2022
+  :SISTEMA: Cliente #1 conectado
+-------------------------------
+
+Log: 19:01:09 13 de junho de 2022
+  :O Cliente rodrigo enviou a mensagem: ola stor
+-------------------------------
+
+Log: 19:01:12 13 de junho de 2022
+  :O Cliente rodrigo enviou a mensagem: tudo bem?
+-------------------------------
+
+Log: 19:01:14 13 de junho de 2022
+  :SISTEMA: A acabar thread para o cliente rodrigo
+-------------------------------
